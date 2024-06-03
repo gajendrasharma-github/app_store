@@ -1,20 +1,8 @@
 import pandas as pd
 import streamlit as st
-import gdown
-
-# Function to download the dataset
-def download_dataset(file_id):
-    url = f"https://drive.google.com/uc?id={file_id}"
-    output = 'New_clean_data.csv'
-    gdown.download(url, output, quiet=False)
-    return output
-
-# Download the dataset
-file_id = '1xvkSt6hJQg7DkW5SV8vU7nPGIcWyRMBH'
-dataset_path = download_dataset(file_id)
 
 # Load the data
-data = pd.read_csv(dataset_path)
+data = pd.read_csv('New_clean_data.csv')
 st.set_page_config(layout='wide', page_title='App Store Analysis')
 
 
